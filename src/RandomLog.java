@@ -2,27 +2,39 @@
  * Created by Dmytro on 19.04.2017.
  */
 import java.util.Scanner;
+import java.util.Random;
 
 class Domane {
 
     String domName;
 
+    String addGmail() {
+        return "@gmail.com";
+    }
+
+    String addYandex() {
+
+        return "@yandex.ua";
+    }
+
 
     String  addLogin() {
-        String login;
 
-        char[] n = new char[3];
+
+
+        int[] n = new int[3];
+
 
         for (int i = 0; i < n.length; i++) {
 
-            n[i] = (char) Math.random();
+            n[i] = (int) (Math.random()*10);
         }
 
-        String n1 = Character.toString(n[0]);
-        String n2 = Character.toString(n[1]);
-        String n3 = Character.toString(n[2]);
+        String n1 = Integer.toString(n[0]);
+        String n2 = Integer.toString(n[1]);
+        String n3 = Integer.toString(n[2]);
 
-        return  login = n1+n2+n3;
+        return  n1+n2+n3;
 
 
     }
@@ -37,22 +49,24 @@ public class RandomLog {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Choose email service to creat: ");
+        System.out.println("1. gmail");
+        System.out.println("2. yandex");
 
-        String email = sc.nextLine();
-
-
-        switch(email) {
-
-            case "gmail":
+        String choice = sc.nextLine();
 
 
-                System.out.println("Your email is: " +user.addLogin()   + "." + email +'.' +"com");
+        switch(choice) {
+
+            case "1":
+
+
+                System.out.println("Your email is: " +user.addLogin()   +user.addGmail() );
 
                 break;
 
-            case "yandex":
+            case "2":
 
-                System.out.println("Your email is: " +user.addLogin() + "." + email+"." +"com");
+                System.out.println("Your email is: " +user.addLogin() +user.addYandex() );
                 break;
 
         }
