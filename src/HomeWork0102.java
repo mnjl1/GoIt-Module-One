@@ -1,6 +1,4 @@
-/**
- * Created by Dmytro on 15.04.2017.
- */
+
 
 import java.util.Scanner;
 import java.util.Arrays;
@@ -12,9 +10,44 @@ public class HomeWork0102 {
         Scanner sc = new Scanner(System.in);
 
 
+
+
         for(int i = 0; i<5; i++) {
-            System.out.println("Enter number: " +(i+1));
-            n[i] = sc.nextInt();
+
+            System.out.println("Enter next number: " +(i+1));
+
+
+          int intNumber;
+
+
+          do {
+
+              if (sc.hasNextInt()) {
+                  intNumber = sc.nextInt();
+                  n[i] = intNumber;
+
+
+              }
+
+              else if(sc.hasNextDouble() ) {
+
+                  double intdouble = sc.nextDouble();
+                  System.out.println("Enter integer.");
+
+
+              }
+          else if (sc.hasNextLine()) {
+                  String str = sc.nextLine();
+                  System.out.println("Enter integer");
+
+              }
+
+          } while(true);
+
+
+
+
+
 
         }
         sc.close();
