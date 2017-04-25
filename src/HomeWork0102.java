@@ -1,6 +1,6 @@
 
 
-import java.util.InputMismatchException;
+import java.util.*;
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -12,19 +12,19 @@ public class HomeWork0102 {
 
         int count=0;
 
-        while(count <5){
+        while(count < n.length){
 
             System.out.println("Enter number " +(count+1));
 
             try{
 
 
-                n[count] = sc.nextInt();
+                n[count] = Integer.parseInt(sc.next());
 
                 count++;
 
             }
-            catch(InputMismatchException e) {
+            catch(Exception e) {
                 System.out.println("Wrong number, try again.");
 
             }
