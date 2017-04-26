@@ -47,6 +47,8 @@ public class ArrayHolder {
 
     }
 
+    // сортировка массива, вывод на печать
+
     public void sortArray() {
         Arrays.sort(array);
         System.out.println(Arrays.toString(array));
@@ -60,19 +62,21 @@ public class ArrayHolder {
 
         Scanner scanner = new Scanner(System.in);
 
-        boolean isInteger = false;
+        int isInteger = 0;
 
-        while (isInteger = false) {
+        while (isInteger != 1) {
 
             try {
 
                 numberToSearch = Integer.parseInt(scanner.next());
-                isInteger = true;
+                isInteger = 1;
+
 
             } catch (Exception e) {
                 System.out.println("Not Integer, try again!");
 
             }
+        }
 
             for (int i = 0; i < arraySize; i++) {
                 System.out.println("Searching...");
@@ -82,7 +86,7 @@ public class ArrayHolder {
             }
 
 
-        }
+
 
     }
 }
