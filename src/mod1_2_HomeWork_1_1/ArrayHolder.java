@@ -28,30 +28,28 @@ public class ArrayHolder {
 
     public void fillArray(int arraySize) {
 
-            int count =0;
+        int count = 0;
 
-            while(count < array.length)
-            try{ array[count] = Integer.parseInt(scanner.next());
+        while (count < array.length) {
+            System.out.println("Enter next number:");
+            try {
+                array[count] = Integer.parseInt(scanner.next());
+
                 count++;
 
-            }catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("Not interger. Try again.");
             }
 
 
+        }
+
+
     }
 
-    @Override
-
-    public String toString() {
-        return "ArrayHolder{" +
-                "array=" + Arrays.toString(array) +
-                '}';
-    }
-
-    // сортировка массива
     public void sortArray() {
         Arrays.sort(array);
+        System.out.println(Arrays.toString(array));
 
     }
 
@@ -65,6 +63,7 @@ public class ArrayHolder {
         boolean isInteger = false;
 
         while (isInteger = false) {
+
             try {
 
                 numberToSearch = Integer.parseInt(scanner.next());

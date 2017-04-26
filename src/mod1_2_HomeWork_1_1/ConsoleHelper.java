@@ -12,9 +12,13 @@ public class ConsoleHelper {
 
 
 
+
+
         //создаем меню выбора действий над массивом
 
     public void menu() {
+
+        mass.fillArray(arraySize);
 
 
 
@@ -23,7 +27,6 @@ public class ConsoleHelper {
         System.out.println("1. Sort array.");
         System.out.println("2. Search number");
 
-        boolean isInteger = false;
         int choice = 0;
 
         while (choice < 1 || choice > 2) {
@@ -38,18 +41,18 @@ public class ConsoleHelper {
 
         switch (choice) {
 
-            case 1: {
+            case 1:
 
                 mass.sortArray();
                 System.out.println("Sorted array: " + mass);
                 break;
 
-            }
 
-            case 2: {
+
+            case 2:
                 mass.searchArray();
                 break;
-            }
+
 
             default:
                 System.out.println("Make your choice!");
