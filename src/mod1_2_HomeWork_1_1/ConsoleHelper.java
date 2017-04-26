@@ -4,15 +4,11 @@ import java.util.Scanner;
 
 public class ConsoleHelper {
 
+    Scanner scanner = new Scanner(System.in);
 
+        int arraySize = scanner.nextInt();
 
-        ArrayHolder mass = new ArrayHolder();
-
-
-        Scanner scanner = new Scanner(System.in);
-
-
-        int size = scanner.nextInt();
+        ArrayHolder mass = new ArrayHolder(arraySize);
 
 
 
@@ -30,10 +26,9 @@ public class ConsoleHelper {
         boolean isInteger = false;
         int choice = 0;
 
-        while (isInteger = false && choice < 1 || choice > 2) {
+        while (choice < 1 || choice > 2) {
             try {
                 choice = Integer.parseInt(scanner.next());
-                isInteger = true;
 
             } catch (Exception e) {
                 System.out.println("Wrong choice, try again.");
@@ -47,12 +42,17 @@ public class ConsoleHelper {
 
                 mass.sortArray();
                 System.out.println("Sorted array: " + mass);
+                break;
 
             }
 
             case 2: {
                 mass.searchArray();
+                break;
             }
+
+            default:
+                System.out.println("Make your choice!");
 
         }
     }

@@ -4,16 +4,18 @@ package mod1_2_HomeWork_1_1;
 import java.util.*;
 
 public class ArrayHolder {
-    private int[] array;
+    int[] array;
     int arraySize;
     int numberToSearch;
-    Scanner scanner = new Scanner(System.in);
-    /*
-        public mod1_2_HomeWork_1_1.ArrayHolder(int size) {
 
-            this.array = new int[size];
+    Scanner scanner = new Scanner(System.in);
+
+        public ArrayHolder(int arraySize) {
+
+            this.array = new int[arraySize];
+            this.arraySize = arraySize;
         }
-        */
+
 
     public int[] getArray() {
         return array;
@@ -22,6 +24,7 @@ public class ArrayHolder {
     public void setArray(int[] array) {
         this.array = array;
     }
+
 
     public void fillArray(int arraySize) {
 
@@ -38,12 +41,18 @@ public class ArrayHolder {
 
     }
 
+    @Override
 
-
+    public String toString() {
+        return "ArrayHolder{" +
+                "array=" + Arrays.toString(array) +
+                '}';
+    }
 
     // сортировка массива
     public void sortArray() {
         Arrays.sort(array);
+
     }
 
     //метод поиска числа по значению
