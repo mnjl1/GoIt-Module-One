@@ -1,7 +1,11 @@
 
 public class ArrayTest {
-    ConsoleHelper test = new ConsoleHelper();
+    public static void main(String[] args) {
 
-    test.menu();
 
+        ConsoleHelper test = new ConsoleHelper();
+
+        test.menu();
+
+    }
 }

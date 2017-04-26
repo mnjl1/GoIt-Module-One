@@ -11,6 +11,15 @@ public class ArrayHolder {
             this.array = new int[size];
         }
         */
+
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
+    }
+
     public void fillArray(int arraySize) {
 
             int count =0;
@@ -25,6 +34,8 @@ public class ArrayHolder {
 
 
     }
+
+
 
 
     // сортировка массива

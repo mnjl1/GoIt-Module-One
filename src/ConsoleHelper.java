@@ -15,9 +15,13 @@ public class ConsoleHelper {
         int size = scanner.nextInt();
 
 
+
         //создаем меню выбора действий над массивом
 
     public void menu() {
+
+
+
 
         System.out.println("Make your choice: ");
         System.out.println("1. Sort array.");
