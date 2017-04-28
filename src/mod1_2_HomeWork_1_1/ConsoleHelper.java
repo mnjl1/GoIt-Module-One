@@ -1,35 +1,31 @@
 package mod1_2_HomeWork_1_1;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class ConsoleHelper {
 
     Scanner scanner = new Scanner(System.in);
 
-        int arraySize = scanner.nextInt();
-
-        ArrayHolder mass = new ArrayHolder(arraySize);
-
-
-
-
-
         //создаем меню выбора действий над массивом
 
     public void menu() {
 
-        mass.fillArray(arraySize);
+        System.out.println("Enter array size");
+        int size;
+        size = scanner.nextInt();
 
+        ArrayHolder mass = new ArrayHolder(size);
 
-
+        mass.fillArray(size);
 
         System.out.println("Make your choice: ");
         System.out.println("1. Sort array.");
         System.out.println("2. Search number");
+        System.out.println("3. Exit program. ");
 
         int choice = 0;
 
-        while (choice < 1 || choice > 2) {
+        while (choice < 1 || choice > 3) {
             try {
                 choice = Integer.parseInt(scanner.next());
 
@@ -53,9 +49,11 @@ public class ConsoleHelper {
                 mass.searchArray();
                 break;
 
+            case 3: mass.exitApp();
 
-            default:
-                System.out.println("Make your choice!");
+
+            //default:
+                System.out.println("Make your choice!");//до дефолта не доходит, тк конструкция try/catch строго ограничена в  while()
 
         }
     }
