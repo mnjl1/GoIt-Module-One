@@ -64,7 +64,8 @@ public class ConsoleHelper {
 
 
                 default:
-                    //System.out.println("Make your choice!");
+                    System.out.println("Wrong!");
+                    System.out.println("***");
 
             }
 
