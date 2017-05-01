@@ -32,7 +32,8 @@ public class ConsoleHelper {
             int choice = 0;
 
 
-            while (choice < 1 || choice > 3) {
+
+            while (choice ==0) {
 
 
                 try {
@@ -50,7 +51,6 @@ public class ConsoleHelper {
                 case 1:
 
                     mass.sortArray();
-                    //System.out.println("Sorted array: ");
                     break;
 
 
@@ -64,7 +64,7 @@ public class ConsoleHelper {
 
 
                 default:
-                    System.out.println("Make your choice!");//до дефолта не доходит, тк конструкция try/catch строго ограничена в  while()
+                    //System.out.println("Make your choice!");
 
             }
 
