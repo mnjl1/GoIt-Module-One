@@ -4,9 +4,12 @@ import java.util.*;
 
 public class ConsoleHelper {
 
+
     Scanner scanner = new Scanner(System.in);
 
-        //создаем меню выбора действий над массивом
+    //создаем меню выбора действий над массивом
+
+
 
     public void menu() {
 
@@ -18,45 +21,57 @@ public class ConsoleHelper {
 
         mass.fillArray(size);
 
-        System.out.println("Make your choice: ");
-        System.out.println("1. Sort array.");
-        System.out.println("2. Search number");
-        System.out.println("3. Exit program. ");
+        while (true) {
 
-        int choice = 0;
+            System.out.println("Make your choice: ");
+            System.out.println("1. Sort array.");
+            System.out.println("2. Search number");
+            System.out.println("3. Exit program. ");
 
-        while (choice < 1 || choice > 3) {
-            try {
-                choice = Integer.parseInt(scanner.next());
 
-            } catch (Exception e) {
-                System.out.println("Wrong choice, try again.");
+            int choice = 0;
+
+
+            while (choice < 1 || choice > 3) {
+
+
+                try {
+                    choice = Integer.parseInt(scanner.next());
+
+                } catch (Exception e) {
+                    System.out.println("Wrong choice, try again.");
+                }
+
+            }
+
+
+            switch (choice) {
+
+                case 1:
+
+                    mass.sortArray();
+                    //System.out.println("Sorted array: ");
+                    break;
+
+
+                case 2:
+                    mass.searchArray();
+                    break;
+
+                case 3:
+                    mass.exitApp();
+                    break;
+
+
+                default:
+                    System.out.println("Make your choice!");//до дефолта не доходит, тк конструкция try/catch строго ограничена в  while()
+
             }
 
         }
 
-        switch (choice) {
-
-            case 1:
-
-                mass.sortArray();
-                System.out.println("Sorted array: " + mass);
-                break;
-
-
-
-            case 2:
-                mass.searchArray();
-                break;
-
-            case 3: mass.exitApp();
-
-
-            //default:
-                System.out.println("Make your choice!");//до дефолта не доходит, тк конструкция try/catch строго ограничена в  while()
-
-        }
     }
+
 
 }
 

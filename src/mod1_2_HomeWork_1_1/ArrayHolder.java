@@ -11,9 +11,8 @@ public class ArrayHolder {
     Scanner scanner = new Scanner(System.in);
 
         public ArrayHolder(int size) {
-
-            this.array = new int[size];
-            this.arraySize = size;
+            arraySize = size;
+            array = new int[size];
         }
 
 
@@ -24,6 +23,7 @@ public class ArrayHolder {
     public void setArray(int[] array) {
         this.array = array;
     }
+
 
     public static void addSize() {
 
@@ -58,7 +58,7 @@ public class ArrayHolder {
 
     public void sortArray() {
         Arrays.sort(array);
-        System.out.println(Arrays.toString(array));
+        System.out.println("Sorted array: " +Arrays.toString(array));
 
     }
 
@@ -90,8 +90,6 @@ public class ArrayHolder {
         int s=0; //checking not found
 
             for (int i = 0; i < arraySize; i++) {
-
-
 
                 if (numberToSearch == array[i]) {
 
