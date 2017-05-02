@@ -11,7 +11,7 @@ public class ArrayHolder {
     Scanner scanner = new Scanner(System.in);
 
         public ArrayHolder(int size) {
-
+            arraySize = size;
             array = new int[size];
         }
 
