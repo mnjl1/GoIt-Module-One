@@ -5,13 +5,13 @@ import java.util.*;
 
 public class ArrayHolder {
    private int[] array;
-    int arraySize;
+    int size;
     int numberToSearch;
 
     Scanner scanner = new Scanner(System.in);
 
         public ArrayHolder(int size) {
-            this.arraySize = size;
+            this.size = size;
             this.array = new int[size];
 
         }
@@ -38,7 +38,7 @@ public class ArrayHolder {
 
         int count = 0;
 
-        while (count < arraySize) {
+        while (count < size) {
             System.out.println("Enter  number" +(count+1));
             try {
                 array[count] = Integer.parseInt(scanner.next());
@@ -90,7 +90,7 @@ public class ArrayHolder {
 
         int s=0; //checking not found
 
-            for (int i = 0; i < arraySize; i++) {
+            for (int i = 0; i < size; i++) {
 
                 if (numberToSearch == array[i]) {
 
