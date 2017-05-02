@@ -72,7 +72,7 @@ public class ArrayHolder {
 
         boolean isInteger = false ;
 
-        while (isInteger == false) {
+        while (!isInteger) {
 
             try {
 
