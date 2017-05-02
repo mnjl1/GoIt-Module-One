@@ -11,8 +11,8 @@ public class ArrayHolder {
     Scanner scanner = new Scanner(System.in);
 
         public ArrayHolder(int size) {
-            arraySize = size;
-            array = new int[size];
+            this.arraySize = size;
+            this.array = new int[size];
 
         }
 
@@ -34,7 +34,7 @@ public class ArrayHolder {
     }
 
 
-    public void fillArray(int arraySize) {
+    public void fillArray(int size) {
 
         int count = 0;
 
