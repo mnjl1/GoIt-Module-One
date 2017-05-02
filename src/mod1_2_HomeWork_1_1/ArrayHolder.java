@@ -70,14 +70,14 @@ public class ArrayHolder {
 
         Scanner scanner = new Scanner(System.in);
 
-        int isInteger = 0;
+        boolean isInteger = false ;
 
-        while (isInteger != 1) {
+        while (isInteger == false) {
 
             try {
 
                 numberToSearch = Integer.parseInt(scanner.next());
-                isInteger = 1;
+                isInteger = true;
 
 
             } catch (Exception e) {
