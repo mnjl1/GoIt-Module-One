@@ -13,6 +13,7 @@ public class ArrayHolder {
         public ArrayHolder(int size) {
             arraySize = size;
             array = new int[size];
+
         }
 
 
