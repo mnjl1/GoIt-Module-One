@@ -40,21 +40,37 @@ public class Field {
 
     //checking squares for win
     public void checkWin(String[][] gameField) {
-       if((gameField[0][0].equals("X") & gameField[0][1].equals("X") & gameField[0][2].equals("X")) ||
-               (gameField[1][0].equals("X") & gameField[1][1].equals("X") & gameField[1][2].equals("X")) ||
-               (gameField[2][0].equals("X") & gameField[2][1].equals("X") & gameField[2][2].equals("X")) ||
-               (gameField[0][0].equals("X") & gameField[1][1].equals("X") & gameField[2][2].equals("X")) ||
+       if((gameField[0][0].equals("X") & gameField[0][1].equals("X") & gameField[0][2].equals("X")) |
+               (gameField[1][0].equals("X") & gameField[1][1].equals("X") & gameField[1][2].equals("X")) |
+               (gameField[2][0].equals("X") & gameField[2][1].equals("X") & gameField[2][2].equals("X")) |
+               (gameField[0][0].equals("X") & gameField[1][1].equals("X") & gameField[2][2].equals("X")) |
                (gameField[0][2].equals("X") & gameField[1][1].equals("X") & gameField[2][0].equals("X"))){
            System.out.println("Human wins!!");
            System.exit(0);
 
         }
-        else if((gameField[0][0].equals("O") & gameField[0][1].equals("O") & gameField[0][2].equals("O")) ||
-               (gameField[1][0].equals("O") & gameField[1][1].equals("O") & gameField[1][2].equals("O")) ||
-               (gameField[2][0].equals("O") & gameField[2][1].equals("O") & gameField[2][2].equals("O")) ||
-               (gameField[0][0].equals("O") & gameField[1][1].equals("O") & gameField[2][2].equals("O")) ||
+        else if((gameField[0][0].equals("O") & gameField[0][1].equals("O") & gameField[0][2].equals("O")) |
+               (gameField[1][0].equals("O") & gameField[1][1].equals("O") & gameField[1][2].equals("O")) |
+               (gameField[2][0].equals("O") & gameField[2][1].equals("O") & gameField[2][2].equals("O")) |
+               (gameField[0][0].equals("O") & gameField[1][1].equals("O") & gameField[2][2].equals("O")) |
                (gameField[0][2].equals("O") & gameField[1][1].equals("O") & gameField[2][0].equals("O"))){
            System.out.println("Robot wins!!");
+           System.exit(0);
+
+       }
+       else if (
+               (gameField[0][0]=="X" | gameField[0][0]=="O") &
+               (gameField[0][1]=="X" | gameField[0][1]=="O") &
+               (gameField[0][2]=="X" | gameField[0][2]=="O") &
+               (gameField[1][0]=="X" | gameField[1][0]=="O") &
+               (gameField[1][1]=="X" | gameField[1][1]=="O") &
+               (gameField[1][2]=="X" | gameField[1][2]=="O") &
+               (gameField[2][0]=="X" | gameField[2][0]=="O") &
+               (gameField[2][1]=="X" | gameField[2][1]=="O") &
+               (gameField[2][2]=="X" | gameField[2][2]=="O")
+
+               ){
+           System.out.println("No Win No Loose");
            System.exit(0);
 
        }
