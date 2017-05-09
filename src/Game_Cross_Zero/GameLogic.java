@@ -16,7 +16,6 @@ public class GameLogic {
 
         Field game = new Field(field, fieldSize);
 
-
         while (true) {
             game.showGameField(field);
             game.checkWin(field);
@@ -45,7 +44,6 @@ public class GameLogic {
                             System.out.println("Not Integer from 0 to 9.");
                         }
                     }
-
 
                     switch (humanMove) {
                         case (1):
@@ -88,7 +86,6 @@ public class GameLogic {
                         default:
                             System.out.println("Make your choice, Human, planet Earth is in danger!!");
 
-
                     }
 
 
@@ -104,7 +101,6 @@ public class GameLogic {
                         System.out.println("Robot is moving...");
                         double robotChoice = Math.random() * 10;
                         robotMove = (int) robotChoice;
-
 
                     switch (robotMove) {
 

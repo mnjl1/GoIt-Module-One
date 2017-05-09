@@ -37,7 +37,6 @@ public class Field {
         }
     }
 
-
     //checking squares for win
     public void checkWin(String[][] gameField) {
        if((gameField[0][0].equals("X") & gameField[0][1].equals("X") & gameField[0][2].equals("X")) |
