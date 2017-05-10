@@ -6,11 +6,12 @@ import java.util.Scanner;
 /**
  * Created by Dmytro on 09.05.2017.
  */
-public class ArrayListHolder {
+public class CollectionHolder {
     private ArrayList<Integer> massive;
     int intNumber;
     int index;
-    Scanner scanner = new Scanner(System.in);
+     Scanner scanner = new Scanner(System.in);
+
 
 
     public void addInteger() {
@@ -26,7 +27,7 @@ public class ArrayListHolder {
 
 
 
-    public void addElement(int intNumber) {
+    public void addElement() {
             System.out.println("Enter next collection element.");
             addInteger();
             massive.add(intNumber);
