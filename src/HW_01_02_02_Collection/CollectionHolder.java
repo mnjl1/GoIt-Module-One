@@ -7,9 +7,13 @@ import java.util.Scanner;
  * Created by Dmytro on 09.05.2017.
  */
 public class CollectionHolder {
-    private ArrayList<Integer> massive;
+    public ArrayList<Integer> massive;
     int intNumber;
     int index;
+
+    public CollectionHolder() {
+        massive = new ArrayList<>();
+    }
      Scanner scanner = new Scanner(System.in);
 
 
@@ -56,9 +60,9 @@ public class CollectionHolder {
 
     public void getElement(int index) {
         System.out.println("Enter index to get element.");
-        addInteger();
-        index = intNumber;
-        massive.get(index);
+
+
+        System.out.println(massive.get(index));
 
     }
 
