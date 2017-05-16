@@ -2,7 +2,6 @@ package HW_01_02_02_Collection;
 
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.Scanner;
 
