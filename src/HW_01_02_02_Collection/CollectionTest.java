@@ -29,7 +29,6 @@ public class CollectionTest {
                 System.out.println("Not an integer!");
             }
 
-
             switch (choice) {
 
                 case (1): {
