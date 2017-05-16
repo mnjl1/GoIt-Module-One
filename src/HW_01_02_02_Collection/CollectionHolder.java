@@ -1,6 +1,9 @@
 package HW_01_02_02_Collection;
 
+
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 /**
@@ -18,7 +21,7 @@ import java.util.Scanner;
 
 
 // method to enter any integer
-    public void addInteger() {
+    public void checkInput() {
         boolean isInteger = false;
         while (!isInteger) {
             try { intNumber = Integer.parseInt(scanner.next());
@@ -34,25 +37,32 @@ import java.util.Scanner;
     public void addElement() {
 
             System.out.println("Enter next element to collection.");
-            addInteger();
-            massive.add(intNumber);
-            int n; //increment, look at the task in ReadMe.txt
-        for (int i = 0; i <massive.size()-1; i++) {
-            if (massive.size()==0) break;
-            n = massive.get(i)+intNumber;
-            massive.set(i, n);
-        }
+            checkInput();
+            int newElement;
+            ListIterator<Integer> integerIterator=massive.listIterator();
+            while(integerIterator.hasNext()){
+                newElement = integerIterator.next() +intNumber;
+                integerIterator.set(newElement);
+            }
+ //
+//            int n; //increment, look at the task in ReadMe.txt
+//        for (int i = 0; i <massive.size()-1; i++) {
+//            if (massive.size()==0) break;
+//            n = massive.get(i)+intNumber;
+//            massive.set(i, n);
+
+             massive.add(intNumber);
+
 
     }
 
     public void removeElement() {
         System.out.println("Enter index to remove element.");
 
-
         int index=-1;
         boolean correctIndex = false;
         while(!correctIndex) {
-            addInteger();
+            checkInput();
             if (intNumber < 0 || intNumber > massive.size()) {
                 System.out.println("Index is incorrect.");
             } else {
@@ -60,6 +70,19 @@ import java.util.Scanner;
                 correctIndex = true;
             }
         }
+
+        ListIterator<Integer> integerListIterator = massive.listIterator();
+        int newElement;
+        int del = integerListIterator.next();
+        while (integerListIterator.hasNext()) {
+
+            newElement = integerListIterator.next() - del;
+            integerListIterator.set(newElement);
+
+        }
+        massive.remove(index);
+
+        /*
         int delNumber = massive.get(index);
         massive.remove(index);
         int n;
@@ -68,12 +91,14 @@ import java.util.Scanner;
             n = massive.get(i) - delNumber;
             massive.set(i, n);
         }
+        */
+
     }
 
     //check if collection contains element
     public void checkElement() {
         System.out.println("Enter integer to check if collection contains it.");
-        addInteger();
+        checkInput();
         boolean result = massive.contains(intNumber);
 
        if (result) {
@@ -85,7 +110,7 @@ import java.util.Scanner;
 
     public void searchIndex() {
         System.out.println("Enter index to look at element.");
-        addInteger();
+        checkInput();
         index = intNumber;
         System.out.println(massive.get(index));
     }
