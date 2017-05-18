@@ -42,36 +42,31 @@ import java.util.Scanner;
                 newElement = integerIterator.next() +intNumber;
                 integerIterator.set(newElement);
             }
- //
-//            int n; //increment, look at the task in ReadMe.txt
-//        for (int i = 0; i <massive.size()-1; i++) {
-//            if (massive.size()==0) break;
-//            n = massive.get(i)+intNumber;
-//            massive.set(i, n);
 
              massive.add(intNumber);
-
 
     }
 
     public void removeElement() {
         System.out.println("Enter index to remove element.");
 
-        int index=-1;
+        int index=0;
         boolean correctIndex = false;
         while(!correctIndex) {
             checkInput();
-            if (intNumber < 0 || intNumber > massive.size()) {
+            if (intNumber < 0 || intNumber > massive.size()-1) {
                 System.out.println("Index is incorrect.");
             } else {
                 index = intNumber;
                 correctIndex = true;
             }
         }
+        int del = massive.get(index);
 
         ListIterator<Integer> integerListIterator = massive.listIterator();
         int newElement;
-        int del = integerListIterator.next();
+
+        //int del = integerListIterator.next();
         while (integerListIterator.hasNext()) {
 
             newElement = integerListIterator.next() - del;
@@ -80,16 +75,6 @@ import java.util.Scanner;
         }
         massive.remove(index);
 
-        /*
-        int delNumber = massive.get(index);
-        massive.remove(index);
-        int n;
-        for (int i = 0; i <massive.size(); i++) {
-            //if (massive.size() == 0) break;
-            n = massive.get(i) - delNumber;
-            massive.set(i, n);
-        }
-        */
 
     }
 

@@ -61,6 +61,7 @@ public class CollectionTest {
                 }
                 case (8) : {
                     testCollection.exitApp();
+                    break;
                 }
 
                 case (9) : {
@@ -73,6 +74,7 @@ public class CollectionTest {
                 }
                 default:
                     System.out.println(" Make correct choice.");
+                    break;
 
             }
 
