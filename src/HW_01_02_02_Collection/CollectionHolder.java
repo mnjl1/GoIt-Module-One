@@ -94,8 +94,7 @@ import java.util.Scanner;
 
     public  void  findMinValue() {
         int minValue = 0;
-        for (Integer n: massive
-             ) {
+        for (Integer n: massive) {
             if (minValue < n) minValue = n;
         }
         System.out.println("Min value is: " +minValue);
