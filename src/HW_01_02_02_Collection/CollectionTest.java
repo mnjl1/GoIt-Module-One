@@ -2,9 +2,6 @@ package HW_01_02_02_Collection;
 
 import java.util.Scanner;
 
-/**
- * Created by Dmytro on 09.05.2017.
- */
 public class CollectionTest {
     public static void main(String[] args) {
 
@@ -19,7 +16,7 @@ public class CollectionTest {
             System.out.println("6.Find Min value.");
             System.out.println("7.Find Average value. ");
             System.out.println("8.Exit app.");
-            System.out.println("9. Print collection."); //its not a task
+            System.out.println("9. Print collection.");
 
             Scanner scanner = new Scanner(System.in);
             int choice = 0;
@@ -63,22 +60,17 @@ public class CollectionTest {
                     testCollection.exitApp();
                     break;
                 }
-
                 case (9) : {
                     for (Integer x : testCollection.massive
                          ) {
                         System.out.println(x);
                     }
                     break;
-                    
                 }
                 default:
                     System.out.println(" Make correct choice.");
                     break;
-
             }
-
-
         }
     }
 }

@@ -17,7 +17,6 @@ import java.util.Scanner;
     }
      Scanner scanner = new Scanner(System.in);
 
-
 // method to enter any integer
     public void checkInput() {
         boolean isInteger = false;
@@ -33,7 +32,6 @@ import java.util.Scanner;
 
 //next element to collection
     public void addElement() {
-
             System.out.println("Enter next element to collection.");
             checkInput();
             int newElement;
@@ -42,9 +40,7 @@ import java.util.Scanner;
                 newElement = integerIterator.next() +intNumber;
                 integerIterator.set(newElement);
             }
-
              massive.add(intNumber);
-
     }
 
     public void removeElement() {
@@ -62,20 +58,13 @@ import java.util.Scanner;
             }
         }
         int del = massive.get(index);
-
         ListIterator<Integer> integerListIterator = massive.listIterator();
         int newElement;
-
-        //int del = integerListIterator.next();
         while (integerListIterator.hasNext()) {
-
             newElement = integerListIterator.next() - del;
             integerListIterator.set(newElement);
-
         }
         massive.remove(index);
-
-
     }
 
     //check if collection contains element
@@ -83,12 +72,9 @@ import java.util.Scanner;
         System.out.println("Enter integer to check if collection contains it.");
         checkInput();
         boolean result = massive.contains(intNumber);
-
        if (result) {
            System.out.println("Yes");
        }else System.out.println("No");
-
-
     }
 
     public void searchIndex() {
@@ -100,10 +86,8 @@ import java.util.Scanner;
 
     public void findMaxValue() {
         int maxValue = 0;
-        for (Integer n: massive
-             ) {
+        for (Integer n: massive) {
             if (n > maxValue) maxValue = n;
-
         }
         System.out.println("Max value is: " + maxValue);
     }
@@ -119,22 +103,16 @@ import java.util.Scanner;
 
     public void calcAverage() {
         int sum = 0;
-
         for (Integer n: massive
              ) {
             sum+=n;
-
         }
         int average = sum/massive.size();
         System.out.println("Average is: " + average);
-
     }
 
     public void exitApp() {
         System.out.println("Exiting...");
         System.exit(0);
-
     }
-
-
 }
