@@ -3,14 +3,11 @@ package HW_01_02_02_Queue;
 
 import java.util.*;
 
-/**
- * Created by Dmytro on 20.05.2017.
- */
 public class QueueStart {
     public static void main(String[] args) {
 
         QueueHolder collection = new QueueHolder();
-        collection.printMassive();
+        int newInt = 0;
 
 
         while (true) {
@@ -56,13 +53,15 @@ public class QueueStart {
                             while(true) {
                                 if (collection.massive.size() < 16) {
                                     collection.addElementToCollection();
+
                                 }
 
                                 if (collection.massive.size() == 16) {
-                                    collection.massive.remove(0);
+                                    collection.massive.remove();
                                     collection.addElementToCollection();
 
                                 }
+
                                 collection.printMassive();
 
                             }
@@ -70,7 +69,6 @@ public class QueueStart {
                         }
 
                         case (2): {
-
 
                             break;
                         }
@@ -81,8 +79,23 @@ public class QueueStart {
 
                 case (2): {
                     System.out.println("Creating a collection with any capacity.");
+                    System.out.println("Enter collection size");
 
-                    break;
+                    newInt = scanner.nextInt();
+                    while(true) {
+                        if (collection.massive.size() < newInt) {
+                            collection.addElementToCollection();
+                        }
+
+                        if (collection.massive.size() == newInt) {
+                            collection.massive.poll();
+                            collection.addElementToCollection();
+                        }
+
+                        collection.printMassive();
+
+
+                    }
                 }
 
                 case (3) : {

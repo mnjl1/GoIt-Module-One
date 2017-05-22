@@ -4,11 +4,12 @@ package HW_01_02_02_Queue;
 import java.util.*;
 
 public class QueueHolder {
-    public LinkedList<Integer> massive;
+    public  LinkedList<Integer> massive;
     int newInteger;
+    int size;
 
     public QueueHolder() {
-        massive = new LinkedList<>();
+        massive = new LinkedList<>() ;
     }
 
 
