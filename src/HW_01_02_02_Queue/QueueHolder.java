@@ -4,15 +4,12 @@ package HW_01_02_02_Queue;
 import java.util.*;
 
 public class QueueHolder {
-    public  LinkedList<Integer> massive;
+  static Queue<Integer> massive;
     int newInteger;
-    int size;
 
     public QueueHolder() {
         massive = new LinkedList<>() ;
     }
-
-
 
     public void checkInput() {
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +21,7 @@ public class QueueHolder {
                 isInteger = true;
             }catch (Exception e) {
                 System.out.println("Not integer, try again.");
-                System.out.println("/n");
+                System.out.println("\n");
             }
         }
     }
@@ -33,7 +30,6 @@ public class QueueHolder {
         System.out.println("Add element to collection.");
         checkInput();
         massive.add(newInteger);
-
     }
 
     public void printMassive() {
@@ -42,12 +38,5 @@ public class QueueHolder {
             System.out.print(iterator.next() + " ");
         }
         System.out.println("\n");
-    }
-
-    @Override
-    public String toString() {
-        return "QueueHolder{" +
-                "massive=" + massive +
-                '}';
     }
 }
