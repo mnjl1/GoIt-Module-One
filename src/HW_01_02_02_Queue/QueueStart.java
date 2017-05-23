@@ -45,7 +45,7 @@ public class QueueStart {
                     switch (choice1) {
                         case (1): {
                             while (true) {
-                                System.out.println(" Press for 1 input");
+                                System.out.println("Press 1 for input");
                                 System.out.println("Press any latter to quit program.");
                                 int choice3=0;
                                 try {
@@ -58,12 +58,14 @@ public class QueueStart {
                                     case (1): {
                                         if (collection.massive.size() < 16) {
                                             collection.addElementToCollection();
+                                            collection.printMassive();
                                         }
                                         if (collection.massive.size() == 16) {
                                             collection.massive.remove();
                                             collection.addElementToCollection();
+                                            collection.printMassive();
                                         }
-                                        collection.printMassive();
+
                                         break;
                                     }
                                     case (2): {
@@ -72,7 +74,7 @@ public class QueueStart {
                                     default:
                                         System.out.println("Choose between 1 or 2");
                                 }
-                                collection.printMassive();
+
                             }
                         }
                         case (2): {
