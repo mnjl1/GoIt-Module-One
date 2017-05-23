@@ -96,7 +96,7 @@ public class QueueStart {
                         }
                     }
                     while(true) {
-                        System.out.println(" Press for 1 input");
+                        System.out.println("Press 1 for input");
                         System.out.println("Press any latter to quit program.");
                         int choice4 = 0;
                         try {
