@@ -15,34 +15,18 @@ public class QueueStart {
             System.out.println("2. Collection with any capacity.");
             System.out.println("3. Exit.");
             Scanner scanner = new Scanner(System.in);
-            int choice = 0;
-            boolean correctChoice = false;
 
-            while (!correctChoice) {
-                try {
-                    choice = Integer.parseInt(scanner.next());
-                    correctChoice = true;
-                } catch (Exception e) {
-                    System.out.println("Not integer!");
-                }
-            }
+            int choice=collection.makingCorrectChoice();
+
 
             switch (choice) {
                 case (1): {
                     System.out.println("1. Add element.");
                     System.out.println("2. Back to menu.");
-                    int choice1 = 0;
-                    boolean correctChoice1 = false;
-                    while (!correctChoice1) {
-                        try {
-                            choice1 = Integer.parseInt(scanner.next());
-                            correctChoice1 =true;
-                        } catch (Exception e) {
-                            System.out.println("Not integer!");
-                        }
-                    }
 
-                    switch (choice1) {
+                    choice = collection.makingCorrectChoice();
+
+                    switch (choice) {
                         case (1): {
                             while (true) {
                                 System.out.println("Press 1 for input");
@@ -74,7 +58,6 @@ public class QueueStart {
                                     default:
                                         System.out.println("Choose between 1 or 2");
                                 }
-
                             }
                         }
                         case (2): {

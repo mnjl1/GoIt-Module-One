@@ -19,13 +19,28 @@ public class GameLogic {
         while (true) {
             game.showGameField(field);
             game.checkWin(field);
+
+            int choice=0;
+            int count =0;
+
+            if (count %2 ==0) {
+                    System.out.println("Human, press 1 to move.");
+                    choice = scanner.nextInt();
+
+
+
+                }else choice=2;
+            count++;
+
+
+            /*
             //choose who moves?
             System.out.println("Who moves?");
             System.out.println("1.Human");
             System.out.println("2.Robot");
 
             int choice = scanner.nextInt();
-
+*/
             switch (choice) {
 
                 //human move logic
@@ -48,7 +63,6 @@ public class GameLogic {
                     switch (humanMove) {
                         case (1):
                             game.gameField[0][0] = "X";
-
                             break;
 
                         case (2):

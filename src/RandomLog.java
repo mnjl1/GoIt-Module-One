@@ -4,11 +4,13 @@
 import java.util.Scanner;
 import java.util.Random;
 
-class Domane {
+class Domain {
 
     String domName;
+    int domNameLength;
 
     String addGmail() {
+
         return "@gmail.com";
     }
 
@@ -39,12 +41,29 @@ class Domane {
 
     }
 
+
+/*
+String addLogin() {
+    Random r = new Random();
+
+    char randomLetter = (char) (r.nextInt(26) +'a');
+
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Enter your email loin length from 5 to 10: ");
+
+    domNameLength = scanner.nextInt();
+
+
+
+}
+*/
 }
 
 public class RandomLog {
     public static void main(String[] args) {
 
-        Domane user = new Domane();
+        Domain user = new Domain();
 
         Scanner sc = new Scanner(System.in);
 
