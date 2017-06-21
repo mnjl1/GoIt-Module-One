@@ -4,6 +4,12 @@ package HW_01_02_02_Queue;
 import java.util.*;
 
 public class QueueStart {
+    public static void validateCustomException(int newInt) throws WrongCollectionCapacity{
+        if (newInt <0) {
+            throw new  WrongCollectionCapacity("Integer must be > 0");
+        }
+
+    }
     public static void main(String[] args) {
 
         QueueHolder collection = new QueueHolder();
@@ -14,6 +20,7 @@ public class QueueStart {
             System.out.println("1. Collection with 16 capacity.");
             System.out.println("2. Collection with any capacity.");
             System.out.println("3. Exit.");
+
             Scanner scanner = new Scanner(System.in);
 
             int choice=collection.makingCorrectChoice();
@@ -73,10 +80,17 @@ public class QueueStart {
                     while (!correctSize){
                         try {
                             newInt = Integer.parseInt(scanner.next());
+                            validateCustomException(newInt);
+
                             correctSize = true;
-                        }catch (Exception e){
-                            System.out.println("Collection size is not correct. try again.");
                         }
+                        catch (WrongCollectionCapacity s){
+                            System.out.println("Custom exception: " +s);
+
+                        }
+                        catch(Exception e){
+                                System.out.println("Collection size is not correct. try again.");
+                            }
                     }
                     while(true) {
                         System.out.println("Press 1 for input");

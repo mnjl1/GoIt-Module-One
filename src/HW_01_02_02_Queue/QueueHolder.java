@@ -7,6 +7,8 @@ public class QueueHolder {
     static Queue<Integer> massive;
     int newInteger;
     int choice;
+
+
     Scanner scanner = new Scanner(System.in);
 
     public QueueHolder() {
@@ -17,7 +19,7 @@ public class QueueHolder {
         System.out.println("Not integer, try again.");
     }
 
-    public void checkInput() {
+    public void checkInput()  {
 
         System.out.println("Enter integer.");
         choice=0;
@@ -35,7 +37,7 @@ public class QueueHolder {
         }
     }
 
-    public void addElementToCollection() {
+    public void addElementToCollection()  {
         System.out.println("Add element to collection.");
         checkInput();
         massive.add(newInteger);
