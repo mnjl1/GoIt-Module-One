@@ -19,7 +19,8 @@ public class QueueStart {
             System.out.println("Make your choice:");
             System.out.println("1. Collection with 16 capacity.");
             System.out.println("2. Collection with any capacity.");
-            System.out.println("3. Exit.");
+            System.out.println("3. Fill queue with Random method.");
+            System.out.println("4. Exit.");
 
             Scanner scanner = new Scanner(System.in);
 
@@ -47,15 +48,8 @@ public class QueueStart {
                                 }
                                 switch (choice3) {
                                     case (1): {
-                                        if (collection.massive.size() < 16) {
-                                            collection.addElementToCollection();
-                                            collection.printMassive();
-                                        }
-                                        if (collection.massive.size() == 16) {
-                                            collection.massive.remove();
-                                            collection.addElementToCollection();
-                                            collection.printMassive();
-                                        }
+                                        collection.filling16SizeCollection();
+
 
                                         break;
                                     }
@@ -117,7 +111,14 @@ public class QueueStart {
                         }
                     }
                 }
+
                 case (3) : {
+                    ThreadForQueue t1 = new ThreadForQueue("numbers");
+                    ThreadForQueue2 t2 = new ThreadForQueue2("else_numbers");
+
+
+                }
+                case (4) : {
                     System.exit(0);
                     break;
                 }

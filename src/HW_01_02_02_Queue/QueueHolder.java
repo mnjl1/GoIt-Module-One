@@ -66,5 +66,41 @@ public class QueueHolder {
         }
         return choice;
     }
+
+    public void filling16SizeCollection() {
+        if (massive.size() < 16) {
+            addElementToCollection();
+            printMassive();
+        }
+        if (massive.size() == 16) {
+            massive.remove();
+            addElementToCollection();
+            printMassive();
+        }
+    }
+
+    public void automaticFillCollection() {
+        newInteger = 0;
+        while (true) {
+try {
+    if (massive.size() < 16) {
+        massive.add(newInteger);
+        printMassive();
+        newInteger++;
+        Thread.sleep(500);
+    }
+    if (massive.size() == 16) {
+        massive.remove();
+        massive.add(newInteger);
+        printMassive();
+        newInteger++;
+        Thread.sleep(500);
+    }
+}catch (InterruptedException e){
+    System.out.println(e);
+}
+
+        }
+    }
 }
 
