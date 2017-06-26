@@ -16,7 +16,13 @@ public class ThreadForQueue2 implements Runnable {
 
     @Override
     public void run() {
+
         QueueHolder queueHolder2 = new QueueHolder();
         queueHolder2.automaticFillCollection();
+        try {
+            Thread.sleep(500);
+        }catch (InterruptedException e){
+            System.out.println(e);
+        }
     }
 }

@@ -48,7 +48,17 @@ public class QueueStart {
                                 }
                                 switch (choice3) {
                                     case (1): {
-                                        collection.filling16SizeCollection();
+
+                                        ThreadForQueue t1 = new ThreadForQueue("one");
+                                        ThreadForQueue2 t2 = new ThreadForQueue2("two");
+
+                                        try {
+                                            t1.thread.join();
+                                            t2.thread.join();
+
+                                        }catch (InterruptedException e){
+                                            System.out.println(e);
+                                        }
 
 
                                         break;
