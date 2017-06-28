@@ -12,7 +12,7 @@ public class QueueStart {
         }
 
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         QueueHolder collection = new QueueHolder();
         int newInt = 0;
@@ -114,14 +114,16 @@ public class QueueStart {
                 }
                 //implementing thread
                 case (3) : {
-                    BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(5);
+                    int capacity = 5;
+                    BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(capacity);
 
                     Producer producer = new Producer(queue);
                     Consumer consumer = new Consumer(queue);
 
+
                     while (true) {
                         new Thread(producer).start();
-                        if (queue.size() == 5) {
+                        if (queue.size() == capacity) {
                             new Thread(consumer).start();
                             System.out.println(queue);
 
@@ -130,11 +132,8 @@ public class QueueStart {
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
-
-
                         }
                     }
-
                 }
 
                 case (4) : {

@@ -6,7 +6,7 @@ import java.util.concurrent.BlockingQueue;
  * Created by Dmytro on 28.06.2017.
  */
 public class Consumer implements Runnable {
-    BlockingQueue queue;
+    BlockingQueue<Integer> queue=null;
 
     Consumer(BlockingQueue queue){
         this.queue = queue;
@@ -14,12 +14,11 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
-            try {
-                queue.take();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        queue.remove();
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
