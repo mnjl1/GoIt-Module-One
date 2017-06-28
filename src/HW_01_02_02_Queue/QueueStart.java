@@ -2,6 +2,8 @@ package HW_01_02_02_Queue;
 
 
 import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 public class QueueStart {
     public static void validateCustomException(int newInt) throws WrongCollectionCapacity{
@@ -48,18 +50,7 @@ public class QueueStart {
                                 }
                                 switch (choice3) {
                                     case (1): {
-
-                                        ThreadForQueue t1 = new ThreadForQueue("one");
-                                        ThreadForQueue2 t2 = new ThreadForQueue2("two");
-
-                                        try {
-                                            t1.thread.join();
-                                            t2.thread.join();
-
-                                        }catch (InterruptedException e){
-                                            System.out.println(e);
-                                        }
-
+                                        collection.addElementToCollection();
 
                                         break;
                                     }
@@ -121,13 +112,31 @@ public class QueueStart {
                         }
                     }
                 }
-
+                //implementing thread
                 case (3) : {
-                    ThreadForQueue t1 = new ThreadForQueue("numbers");
-                    ThreadForQueue2 t2 = new ThreadForQueue2("else_numbers");
+                    BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(5);
 
+                    Producer producer = new Producer(queue);
+                    Consumer consumer = new Consumer(queue);
+
+                    while (true) {
+                        new Thread(producer).start();
+                        if (queue.size() == 5) {
+                            new Thread(consumer).start();
+                            System.out.println(queue);
+
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+
+                        }
+                    }
 
                 }
+
                 case (4) : {
                     System.exit(0);
                     break;
