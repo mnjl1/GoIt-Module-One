@@ -120,20 +120,16 @@ public class QueueStart {
                     Producer producer = new Producer(queue);
                     Consumer consumer = new Consumer(queue);
 
+                    Thread t1 = new Thread(producer);
+                    Thread t2 = new Thread(consumer);
 
                     while (true) {
-                        new Thread(producer).start();
-                        if (queue.size() == capacity) {
-                            new Thread(consumer).start();
-                            System.out.println(queue);
-
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                        t1.run();
+                        if (queue.size()==capacity) {
+                            t2.run();
                         }
                     }
+
                 }
 
                 case (4) : {

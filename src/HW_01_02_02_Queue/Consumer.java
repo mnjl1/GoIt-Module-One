@@ -7,14 +7,19 @@ import java.util.concurrent.BlockingQueue;
  */
 public class Consumer implements Runnable {
     BlockingQueue<Integer> queue=null;
+    Thread thread;
 
     Consumer(BlockingQueue queue){
         this.queue = queue;
+        thread = new Thread();
+        thread.start();
     }
 
     @Override
     public void run() {
-        queue.remove();
+        System.out.println("Consuming...");
+            queue.remove();
+        System.out.println(queue);
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {

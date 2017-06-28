@@ -8,16 +8,19 @@ import java.util.concurrent.BlockingQueue;
 public class Producer implements Runnable {
     BlockingQueue<Integer> queue = null;
     int nextElement=0;
+    Thread thread;
 
     Producer(BlockingQueue queue) {
         this.queue = queue;
+        thread = new Thread();
+        thread.start();
     }
 
     @Override
     public void run() {
-
+        System.out.println("Producing....");
             try {
-                    queue.put(nextElement);
+                queue.put(nextElement);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
