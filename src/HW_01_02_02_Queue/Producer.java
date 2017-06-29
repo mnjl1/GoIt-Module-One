@@ -3,9 +3,6 @@ package HW_01_02_02_Queue;
 import java.util.Scanner;
 import java.util.concurrent.BlockingQueue;
 
-/**
- * Created by Dmytro on 28.06.2017.
- */
 public class Producer implements Runnable {
     BlockingQueue<Integer> queue = null;
     int nextElement;
