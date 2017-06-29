@@ -1,5 +1,6 @@
 package HW_01_02_02_Queue;
 
+import java.util.Scanner;
 import java.util.concurrent.BlockingQueue;
 
 /**
@@ -7,7 +8,7 @@ import java.util.concurrent.BlockingQueue;
  */
 public class Producer implements Runnable {
     BlockingQueue<Integer> queue = null;
-    int nextElement=0;
+    int nextElement;
     Thread thread;
 
     Producer(BlockingQueue queue) {
@@ -16,8 +17,26 @@ public class Producer implements Runnable {
         thread.start();
     }
 
+    Scanner scanner = new Scanner(System.in);
+
+
+
     @Override
     public void run() {
+
+        System.out.println("Enter number to add to collection.");
+        System.out.println("Or any letter to quit program.");
+        boolean correct = false;
+        while (!correct) {
+            try {
+                nextElement = Integer.parseInt(scanner.next());
+                correct = true;
+            } catch (Exception e) {
+                System.out.println("Good bye!");
+                System.exit(0);
+            }
+        }
+
         System.out.println("Producing....");
             try {
                 queue.put(nextElement);

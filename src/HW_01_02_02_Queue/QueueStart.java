@@ -21,13 +21,12 @@ public class QueueStart {
             System.out.println("Make your choice:");
             System.out.println("1. Collection with 16 capacity.");
             System.out.println("2. Collection with any capacity.");
-            System.out.println("3. Fill queue with Random method.");
+            System.out.println("3. Collection with thread executing.");
             System.out.println("4. Exit.");
 
             Scanner scanner = new Scanner(System.in);
 
             int choice=collection.makingCorrectChoice();
-
 
             switch (choice) {
                 case (1): {
@@ -115,7 +114,7 @@ public class QueueStart {
                 //implementing thread
                 case (3) : {
                     int capacity = 5;
-                    BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(capacity);
+                    BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(capacity);
 
                     Producer producer = new Producer(queue);
                     Consumer consumer = new Consumer(queue);
